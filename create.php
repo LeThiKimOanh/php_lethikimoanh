@@ -25,9 +25,9 @@ if (!preg_match("/^[0-9]{10}$/", $phone)) {
 }
 
 $currentDate = new DateTime();
-$startDateForDatabase = date('d-m-Y', strtotime($start)); 
+$startDateForDatabase = date('Y-m-d', strtotime($start)); 
 
-if ($startDateForDatabase < $currentDate->format('d-m-Y')) {
+if ($startDateForDatabase < $currentDate->format('Y-m-d')) {
     echo "Ngày bắt đầu không được là ngày trong quá khứ.";
     exit();
 }
